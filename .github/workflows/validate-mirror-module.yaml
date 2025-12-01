@@ -27,10 +27,10 @@ jobs:
             https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           sudo chmod +x /usr/local/bin/yq
 
-      - name: Build matrix from operators.yaml
+      - name: Build module matrix
         id: set-matrix
-        run: |          
-          modules=$(yq -o=json '.operators[] | .slug + "/" + .currentVersion' operators.yaml | jq -s .)  
+        run: |
+          modules=$(yq -o=json '.operators[] | .slug + "/" + .currentVersion' operators.yaml | jq -s -c .)
           echo "Modules: $modules"
           echo "matrix={\"module\":$modules}" >> "$GITHUB_OUTPUT"
 
