@@ -3,20 +3,21 @@ name: Mirror APIs (PR)
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - operators.yaml
+  workflow_dispatch:
 
 jobs:
   mirror:
-    name: ci/mirror
-    # Only run for Renovate PRs that touch operators.yaml
-    if: startsWith(github.head_ref, 'renovate/') && github.actor == 'renovate[bot]'
-
+    name: mirror
+    if: github.event_name != 'workflow_dispatch' &&
+      startsWith(github.head_ref, 'renovate/') &&
+      github.actor == 'renovate[bot]'
     runs-on: ubuntu-latest
     permissions:
-      contents: write        # needed to push back to the PR branch
-      pull-requests: write   # not strictly required for commit, but useful
+      contents: write # needed to push back to the PR branch
+      pull-requests: write
 
     steps:
       - name: Checkout PR branch
