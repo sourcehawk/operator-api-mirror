@@ -1,0 +1,16 @@
+operators:
+- slug: otel-operator
+  repo: github.com/open-telemetry/opentelemetry-operator
+  currentVersion: v0.138.0
+  goModPath: go.mod
+  apiPaths:
+  - "apis/*"
+  overwriteDependencies: []
+
+- slug: eck-operator
+  repo: github.com/elastic/cloud-on-k8s
+  currentVersion: v3.2.0
+  goModPath: go.mod
+  apiPaths:
+  - "pkg/apis/elasticsearch/*"
+  overwriteDependencies: []

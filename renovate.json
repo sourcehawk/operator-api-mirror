@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+
+  "regexManagers": [
+    {
+      "fileMatch": ["^operators\\.ya?ml$"],
+      "datasourceTemplate": "github-releases",
+      "matchStrings": [
+        "repo:\\s*github\\.com/(?<depName>[^\\s]+)[\\s\\S]*?currentVersion:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
+      ],
+      "versioningTemplate": "semver"
+    }
+  ],
+
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchFiles": ["operators.yaml"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "requiredStatusChecks": [
+        "Mirror APIs (PR) / mirror",
+        "Mirror modules go get check / go-get-test"
+      ]
+    }
+  ]
+}
