@@ -1,0 +1,11 @@
+// Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
+// or more contributor license agreements. Licensed under the Elastic License 2.0;
+// you may not use this file except in compliance with the Elastic License 2.0.
+
+// Package v1alpha1 contains API Schema definitions for the agent v1alpha1 API group
+// +k8s:openapi-gen=true
+// +k8s:deepcopy-gen=package,register
+// +k8s:conversion-gen=github.com/sourcehawk/operator-api-mirror/eck-operator/v3.2.0/pkg/apis/agent
+// +k8s:defaulter-gen=TypeMeta
+// +groupName=agent.k8s.elastic.co
+package v1alpha1
