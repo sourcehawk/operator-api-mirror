@@ -32,7 +32,7 @@ help: ## Display this help.
 
 ##@ Build
 
-MIRRORER_VERSION ?= v0.1.0
+MIRRORER_VERSION ?= v0.2.0
 
 .PHONY: mirror
 mirror:  ## Run the mirrorer
