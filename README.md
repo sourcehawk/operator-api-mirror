@@ -87,10 +87,6 @@ operators:
 
 ---
 
-Here’s an updated **Usage** section you can drop straight into your README, plus a short checklist of things to adjust in your repo so `go install` actually works the way you describe.
-
----
-
 ## 🚀 Creating your own mirrors
 
 This repository contains **ready-made mirrors** that do not overwrite or pin dependencies differently from the upstream operators.
@@ -243,9 +239,10 @@ All upstream APIs are open-source (Apache 2.0); the mirror preserves licenses ve
 Contributions welcome!
 
 * Support for more operators
-* Smarter dependency trimming
-* Better diffing on new upstream versions
-* Automatic documentation generation
+  * Create a fork
+  * Create a feature branch on your fork 
+  * Add configuration to the operators.yaml file
+  * Create a PR on this repository
 
 ---
 
